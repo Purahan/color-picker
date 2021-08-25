@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Purahan's Color Picker</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="favicon.ico" rel="icon">
+    <link href="apple-touch-icon.png" rel="apple-touch-icon">
+  </head>
+  <body>
+    <div class="header">
+      <img scr="apple-touch-icon.png" height="100%" width="100%">
+      Color Picker  Made by Purahan...
+    </div>
+    <div class="slidecontainer" style="margin:10px">
+      <input type="range" min="0" max="255" value="0" class="slider slider1" id="redSlider">
+      <p>Red: <span id="red"></span></p>
+    </div>
+
+    <div class="slidecontainer2" style="margin:10px">
+      <input type="range" min="0" max="255" value="0" class="slider slider2" id="greenSlider">
+      <p>Green: <span id="green"></span></p>
+    </div>
+
+    <div class="slidecontainer3" style="margin:10px">
+      <input type="range" min="0" max="255" value="0" class="slider slider3" id="blueSlider">
+      <p>Blue: <span id="blue"></span></p>
+    </div>
+    <div id="color" style="margin:10px"></div>
+    <p style="margin:10px">Code is present here for this color: <br /><span id="colorCode">rgb(0, 0, 0)</span></p>
+  </body>
+  <script src="script.js"></script>
+</html>
