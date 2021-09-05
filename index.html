@@ -2,31 +2,53 @@
 <html>
   <head>
     <title>Purahan's Color Picker</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="favicon.ico" rel="icon">
     <link href="apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   </head>
   <body>
-    <div class="header">
-      <img scr="apple-touch-icon.png" height="100%" width="100%">
-      Color Picker  Made by Purahan...
-    </div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4 px-3 py-4" aria-label="Fourth navbar example">
+      <div class="container-fluid">
+        <a class="navbar-brand fs-3" href="#">Color Picker</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExample04">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">RGB</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Hexa Decimal</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="slidecontainer" style="margin:10px">
       <input type="range" min="0" max="255" value="0" class="slider slider1" id="redSlider">
-      <p>Red: <span id="red"></span></p>
+      <p>Red: <input class="form-control" style="width: 100px" min="0" max="255" type="number" name="red" id="red" /></p>
     </div>
 
     <div class="slidecontainer2" style="margin:10px">
       <input type="range" min="0" max="255" value="0" class="slider slider2" id="greenSlider">
-      <p>Green: <span id="green"></span></p>
+      <p>Green: <input class="form-control" style="width: 100px" min="0" max="255" type="number" name="green" id="green" /></p>
     </div>
 
     <div class="slidecontainer3" style="margin:10px">
       <input type="range" min="0" max="255" value="0" class="slider slider3" id="blueSlider">
-      <p>Blue: <span id="blue"></span></p>
+      <p>Blue: <input class="form-control" style="width: 100px" min="0" max="255" type="number" name="blue" id="blue" /></p>
     </div>
-    <div id="color" style="margin:10px"></div>
-    <p style="margin:10px">Code is present here for this color: <br /><span id="colorCode">rgb(0, 0, 0)</span></p>
+    <div id="color"></div>
+    <p style="margin:10px">Code is present here for this color: <br />
+    <div class="input-group mb-3 mx-3" style="width: 250px;">
+      <input type="text" class="form-control" placeholder="RGB Color Code" value="rgb(255, 255, 255)" readonly aria-label="RGB Color Code" id="colorCode" aria-describedby="button-addon2">
+      <button class="btn btn-primary" id="copy" onclick="changeAndCopy()" onmouseover="show()" onmouseout="hide()" aria-describedby="tooltip">
+        <i class="bi bi-clipboard"></i>
+      </button>
+    </div>
+    <div id="snackbar">Color Code copied to clipboard...</div>
   </body>
   <script src="script.js"></script>
 </html>
